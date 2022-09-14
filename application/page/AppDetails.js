@@ -66,7 +66,7 @@ define(["app"], (App) => {
                             [
                                 h("img", {
                                     class: "Icon",
-                                    domProps: { src: server_info.proxy + this.data.icon },
+                                    domProps: { src: this.data.icon },
                                 }),
                                 h("div", { class: "Name" }, this.data.name),
                                 h("div", { class: "Tags flex-h" }, [
@@ -138,7 +138,7 @@ define(["app"], (App) => {
                                               this.data.screenshots.map((o, index) => {
                                                   return h("img", {
                                                       class: "Item",
-                                                      domProps: { src: server_info.proxy + o },
+                                                      domProps: { src: o },
                                                       attrs: {
                                                           focusable: true,
                                                       },
@@ -153,7 +153,7 @@ define(["app"], (App) => {
                                                               App.startPage({
                                                                   name: "Album",
                                                                   params: {
-                                                                      items: server_info.proxy + this.data.screenshots,
+                                                                      items: this.data.screenshots,
                                                                       index: index,
                                                                   },
                                                               });
@@ -292,14 +292,15 @@ define(["app"], (App) => {
                                 right: this.$t("back"),
                                 on: {
                                     keyPress: {
-                                        softLeft: () => {
+                                        SoftLeft: () => {
                                             if (this.after_installation) {
                                                 this.launch_app();
                                             } else {
-                                                this.download_file(this.data.download.url);
+                                                // this.download_file(this.data.download.url);
+                                                this.installPackage(this.data.download.url);
                                             }
                                         },
-                                        softRight: () => {
+                                        SoftRight: () => {
                                             this.close();
                                         },
                                     },
@@ -371,6 +372,18 @@ define(["app"], (App) => {
                         appsRecord[appsRecord.length - 1].launch();
                     };
                 },
+                installPackage(manifestUrl) {
+                    let url = `http://kaios.fas.ink/manifest?url=${encodeURIComponent(manifestUrl)}&t=${Date.now()}`;
+                    let request = navigator.mozApps.installPackage(url);
+                    request.onsuccess = (success) => {
+                        this.after_installation = true;
+                        alert(this.$t("App_mgmt_install_success"));
+                    };
+
+                    request.onerror = (error) => {
+                        console.log(error);
+                    };
+                }
             },
         });
     };

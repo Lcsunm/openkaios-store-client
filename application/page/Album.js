@@ -59,17 +59,17 @@ define(["app"], (App) => {
                                 right: this.$t("back"),
                                 on: {
                                     keyPress: {
-                                        softRight: () => {
+                                        SoftRight: () => {
                                             this.close();
                                         },
                                     },
                                     keyDown: {
-                                        arrowLeft: () => {
+                                        ArrowLeft: () => {
                                             if (this.index - 1 >= 0) {
                                                 this.index -= 1;
                                             }
                                         },
-                                        arrowRight: () => {
+                                        ArrowRight: () => {
                                             if (this.index + 1 < this.items.length) {
                                                 this.index += 1;
                                             }

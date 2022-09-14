@@ -2,7 +2,7 @@
     "version": "2.1.5",
     "name": "openGiraffes Store",
     "description": "openGiraffes Store (openGiraffes Database)",
-    "origin": "app://store.opengiraffes.top",
+    "origin": "app://kaios-plus.kaiostech.com",
     "launch_path": "/index.html",
     "type": "certified",
     "fullscreen": "false",
@@ -44,7 +44,23 @@
 
         "systemXHR": {
             "description": "Required to load remote content"
-        }
+        },
+
+        
+        "settings": { "access": "readwrite" },
+        "themeable": {},
+        "storage": {},
+        "softkey": {},
+        "serviceworker": {},
+        "kaios-accounts": {},
+        "wifi-manage": {},
+        "cloud-authorization": {},
+        "mobileconnection": {},
+        "fota": {},
+        "feature-detection": {},
+        "power": {},
+        "engmode-extension": {},
+        "external-api": {}
     },
     "locales": {
         "zh-CN": {

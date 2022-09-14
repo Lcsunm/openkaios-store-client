@@ -59,7 +59,7 @@ define(["app"], (App) => {
                                 right: this.$t("back"),
                                 on: {
                                     keyPress: {
-                                        softRight: () => {
+                                        SoftRight: () => {
                                             this.close();
                                         },
                                     },

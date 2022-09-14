@@ -1,9 +1,8 @@
 const server_info = {
     name: "opengiraffes",
-    LastUpdateFile: "https://storedb.opengiraffes.top/lastUpdate.txt",
-    server_list: ["https://storedb.opengiraffes.top/data.json"],
+    LastUpdateFile: "https://gitee.com/Lcsunm/PublicRes-KaiOS/raw/master/lastUpdate.txt",
+    server_list: ["https://gitee.com/Lcsunm/PublicRes-KaiOS/raw/master/data.json"],
     SimpleRatingServer: "https://liaronce.top",
     QR_header: "opengiraffes:",
     terms: "https://docs.opengiraffes.top/#/store/terms",
-    proxy: "https://kaios.tri1.workers.dev/?url=",
 };

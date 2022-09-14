@@ -143,29 +143,6 @@ define(["vue"], function (Vue) {
                     return;
                 }
                 switch (e.key) {
-                    case "SoftLeft":
-                    case "F1":
-                        event.softLeft && event.softLeft();
-                        break;
-                    case "Enter":
-                        event.enter && event.enter();
-                        break;
-                    case "SoftRight":
-                    case "F2":
-                        event.softRight && event.softRight();
-                        break;
-                    case "ArrowUp":
-                        event.arrowUp && event.arrowUp();
-                        break;
-                    case "ArrowDown":
-                        event.arrowDown && event.arrowDown();
-                        break;
-                    case "ArrowLeft":
-                        event.arrowLeft && event.arrowLeft();
-                        break;
-                    case "ArrowRight":
-                        event.arrowRight && event.arrowRight();
-                        break;
                     default:
                         if (e.key in event) {
                             event[e.key]();
@@ -176,20 +153,20 @@ define(["vue"], function (Vue) {
             onClick_Left() {
                 this.options.on &&
                     this.options.on.keyPress &&
-                    this.options.on.keyPress.softLeft &&
-                    this.options.on.keyPress.softLeft();
+                    this.options.on.keyPress.SoftLeft &&
+                    this.options.on.keyPress.SoftLeft();
             },
             onClick_Center() {
                 this.options.on &&
                     this.options.on.keyPress &&
-                    this.options.on.keyPress.enter &&
-                    this.options.on.keyPress.enter();
+                    this.options.on.keyPress.Enter &&
+                    this.options.on.keyPress.Enter();
             },
             onClick_Right() {
                 this.options.on &&
                     this.options.on.keyPress &&
-                    this.options.on.keyPress.softRight &&
-                    this.options.on.keyPress.softRight();
+                    this.options.on.keyPress.SoftRight &&
+                    this.options.on.keyPress.SoftRight();
             },
         },
     });

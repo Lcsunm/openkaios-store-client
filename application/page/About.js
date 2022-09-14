@@ -59,18 +59,18 @@ define(["app"], (App) => {
                                 right: this.$t("back"),
                                 on: {
                                     keyPress: {
-                                        softRight: () => {
+                                        SoftRight: () => {
                                             this.close();
                                         },
                                     },
                                     keyDown: {
-                                        arrowDown: () => {
+                                        ArrowDown: () => {
                                             this.$refs.Content.scrollBy({
                                                 behavior: "smooth",
                                                 top: 50,
                                             });
                                         },
-                                        arrowUp: () => {
+                                        ArrowUp: () => {
                                             this.$refs.Content.scrollBy({
                                                 behavior: "smooth",
                                                 top: -50,

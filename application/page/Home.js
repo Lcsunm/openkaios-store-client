@@ -167,7 +167,7 @@ define(["app"], (App) => {
                                     [
                                         h("img", {
                                             class: "Icon",
-                                            domProps: { src: server_info.proxy + item.icon },
+                                            domProps: { src: item.icon },
                                         }),
                                         h("div", { class: "Right flex-v flex-1" }, [
                                             h("div", { class: "Title ellipsis" }, item.name),
@@ -231,7 +231,7 @@ define(["app"], (App) => {
                                 },
                                 on: {
                                     keyPress: {
-                                        softRight: () => {
+                                        SoftRight: () => {
                                             App.startPage({
                                                 name: "About",
                                                 params: {
@@ -240,7 +240,7 @@ define(["app"], (App) => {
                                                 },
                                             });
                                         },
-                                        softLeft: () => {
+                                        SoftLeft: () => {
                                             if (this.searchResult) {
                                                 this.clearSearch();
                                             }
