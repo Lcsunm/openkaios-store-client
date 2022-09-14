@@ -44,23 +44,7 @@
 
         "systemXHR": {
             "description": "Required to load remote content"
-        },
-
-        
-        "settings": { "access": "readwrite" },
-        "themeable": {},
-        "storage": {},
-        "softkey": {},
-        "serviceworker": {},
-        "kaios-accounts": {},
-        "wifi-manage": {},
-        "cloud-authorization": {},
-        "mobileconnection": {},
-        "fota": {},
-        "feature-detection": {},
-        "power": {},
-        "engmode-extension": {},
-        "external-api": {}
+        }
     },
     "locales": {
         "zh-CN": {

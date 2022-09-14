@@ -296,6 +296,7 @@ define(["app"], (App) => {
                                             if (this.after_installation) {
                                                 this.launch_app();
                                             } else {
+                                                context.installing = true;
                                                 // this.download_file(this.data.download.url);
                                                 this.installPackage(this.data.download.url);
                                             }
@@ -376,11 +377,14 @@ define(["app"], (App) => {
                     let url = `http://kaios.fas.ink/manifest?url=${encodeURIComponent(manifestUrl)}&t=${Date.now()}`;
                     let request = navigator.mozApps.installPackage(url);
                     request.onsuccess = (success) => {
+                        this.installing = false;
                         this.after_installation = true;
                         alert(this.$t("App_mgmt_install_success"));
                     };
 
                     request.onerror = (error) => {
+                        this.installing = false;
+                        alert("安装失败");
                         console.log(error);
                     };
                 }
